@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MeaningService } from '../../services/meaning/meaning.service';
-import { parse } from 'node-html-parser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -9,19 +8,25 @@ import { parse } from 'node-html-parser';
 })
 export class FormComponent implements OnInit {
 
-  meaning: string | undefined;
+  name: string;
 
-  constructor(private meaningService: MeaningService) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.meaningService.test().subscribe(
-      (test) => {
-        const temp = test?.contents;
-        // console.log(this.test);
-        const root = parse(temp);
-        this.meaning = root.querySelector('.namedef')?.innerText;
-        // console.log(root.querySelector('.namedef')?.innerText);
-      });
+    //
+  }
+
+  onSubmit() {
+    if (!this.name || this.name.length < 2) {
+      alert('Please, insert a real name!');
+      return;
+    }
+
+    const cleanName = this.name.split(" ")[0];
+
+    this.router.navigate(['/' + cleanName.toLowerCase()]);
+
+    this.name = '';
   }
 
 }

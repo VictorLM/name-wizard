@@ -6,15 +6,15 @@ import { retry, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class MeaningService {
+export class AdviceService {
 
   public onError: Subject<string> = new Subject();
-  private apiUrl = 'https://api.allorigins.win/get?&url=https://www.behindthename.com/name/';
+  private apiUrl = 'https://api.adviceslip.com/advice';
 
   constructor(private http: HttpClient) {}
 
-  get(name: string): Observable<{ contents: string }> {
-    return this.http.get<{ contents: string }>(this.apiUrl + name)
+  get(): Observable<{ slip: { advice: string } }> {
+    return this.http.get<{ slip: { advice: string } }>(this.apiUrl)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -33,5 +33,4 @@ export class MeaningService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
-
 }

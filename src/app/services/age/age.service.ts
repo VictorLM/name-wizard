@@ -6,15 +6,15 @@ import { retry, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class MeaningService {
+export class AgeService {
 
   public onError: Subject<string> = new Subject();
-  private apiUrl = 'https://api.allorigins.win/get?&url=https://www.behindthename.com/name/';
+  private apiUrl = 'https://api.agify.io/?name=';
 
   constructor(private http: HttpClient) {}
 
-  get(name: string): Observable<{ contents: string }> {
-    return this.http.get<{ contents: string }>(this.apiUrl + name)
+  get(name: string): Observable<{ age: number }> {
+    return this.http.get<{ age: number }>(this.apiUrl + name)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -33,5 +33,4 @@ export class MeaningService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
-
 }

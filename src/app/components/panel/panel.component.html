@@ -1,0 +1,21 @@
+<h1 *ngIf="name">
+  {{ name | titlecase }}
+</h1>
+
+<div *ngIf="loading.meaning || loading.age || loading.advice">
+  <h1>LOADING...</h1>
+</div>
+
+<div *ngIf="!loading.meaning && !loading.age && !loading.advice">
+
+  <p *ngIf="age">
+    Age: {{ age }}
+  </p>
+
+  <p *ngIf="meaning" [innerHTML]="meaning"></p>
+
+  <p *ngIf="advice">
+    Advice: {{ advice }}
+  </p>
+
+</div>

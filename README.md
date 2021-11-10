@@ -1,27 +1,54 @@
-# NameWizard
+<h1 align="center" style="border-bottom: none">
+  <a href="https://name-wizard.netlify.app/" target="_blank">Name Wizard</a>
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
+<h1 id="descricao">Descrição</h1>
 
-## Development server
+<p>
+  [EN] Say your first name and the wizard will guess your age, your name meaning and give you an advice. Project to training my Angular 12 skills.
+  [PT] Diga seu primeiro nome e o mago vai adivinhar sua idade, mostrar o significado do seu nome, e ainda te dar um conselho. Projeto que fiz para treinar meus aprendizados em Angular 12.
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<h1 id="tabela-de-conteudo">Tabela de conteúdos</h1>
 
-## Code scaffolding
+<!--ts-->
+   * [Tabela de Conteúdo](#tabela-de-conteudo)
+   * [Descrição](#descricao)
+   * [Preview](#preview)
+   * [Tecnologias](#tecnologias)
+   * [Autor](#autor)
+<!--te-->
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<h1 id="preview">Preview</h1>
 
-## Build
+<p align="center">
+  <img src="https://i.imgur.com/qdVwE6y.gif" alt="Name Wizard" />
+</p>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<h1 id="tecnologias">Tecnologias</h1>
 
-## Running unit tests
+<p>
+    As seguintes ferramentas foram usadas na construção deste projeto:
+</p>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [Node.js](https://nodejs.org/en/)
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
+- [Agify.io](https://agify.io/)
+- [Advice Slip JSON API](https://api.adviceslip.com/)
+- [Behind the Name](https://www.behindthename.com/)
+- [allOrigins](https://allorigins.win/)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<h1 id="autor">Autor</h1>
 
-## Further help
+<p>
+  Made with ❤️ by <b>Victor Meireles</b> 👋🏽 Get in touch!
+  <br/>
+  Feito com ❤️ por <b>Victor Meireles</b> 👋🏽 Entre em contato!
+</p>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/VictorLM)](https://github.com/VictorLM)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/victorlucasmeireles/)](https://www.linkedin.com/in/victorlucasmeireles/)
+[![Gmail Badge](https://img.shields.io/badge/-Email-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:victor.meireles.dev@gmail.com)](mailto:victor.meireles.dev@gmail.com)

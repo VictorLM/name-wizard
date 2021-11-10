@@ -4,7 +4,7 @@ import { parse } from 'node-html-parser';
 import { Subscription } from 'rxjs';
 import { AgeService } from '../../services/age/age.service';
 import { AdviceService } from '../../services/advice/advice.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-panel',
@@ -12,7 +12,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./panel.component.scss']
 })
 export class PanelComponent implements OnInit {
-
   name: string;
   age: number | undefined;
   meaning: string | undefined;
@@ -29,14 +28,22 @@ export class PanelComponent implements OnInit {
     private ageService: AgeService,
     private adviceService: AdviceService,
     private actRoute: ActivatedRoute,
+    private router: Router,
   ) {
     this.name = this.actRoute.snapshot.params.name;
   }
 
   ngOnInit(): void {
-    this.getMeaning();
-    this.getAge();
-    this.getAdvice();
+    const regex = /^[a-zA-Z]+$/;
+
+    if(this.name && this.name.length > 2 && this.name.length < 12 && regex.test(this.name)) {
+      this.getMeaning();
+      this.getAge();
+      this.getAdvice();
+    } else {
+      alert('Invalid first name!');
+      this.router.navigate(['/']);
+    }
   }
 
   getMeaning(): void {
@@ -106,7 +113,7 @@ export class PanelComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if(this.subscription) this.subscription.unsubscribe();
   }
 
 }

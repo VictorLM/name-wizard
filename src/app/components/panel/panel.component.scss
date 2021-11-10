@@ -1,0 +1,53 @@
+div.panel {
+  padding: 2rem;
+  max-width: 600px;
+  border-radius: 1rem;
+  -webkit-box-shadow: 1px 1px 15px 5px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 15px 5px rgba(0,0,0,0.5);
+  background: #A1FFCE;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  h1 {
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  p.age {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  p.meaning {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    span {
+      font-size: 1rem;
+      margin-top: 1rem;
+      display: block;
+      text-align: justify;
+      font-weight: normal;
+    }
+  }
+
+  p.advice {
+    text-align: center;
+    span {
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+
+}
+

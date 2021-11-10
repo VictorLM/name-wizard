@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-
   name: string;
 
   constructor(private router: Router) {}
@@ -17,8 +16,11 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.name || this.name.length < 2) {
-      alert('Please, insert a real name!');
+    const regex = /^[a-zA-Z]+$/;
+
+    if(!this.name || this.name.length < 2 || this.name.length > 12 || !regex.test(this.name)) {
+      alert('Please, insert a real first name!');
+      this.name = '';
       return;
     }
 

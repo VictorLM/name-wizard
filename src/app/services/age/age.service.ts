@@ -7,7 +7,6 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AgeService {
-
   public onError: Subject<string> = new Subject();
   private apiUrl = 'https://api.agify.io/?name=';
 

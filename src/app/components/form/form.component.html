@@ -1,16 +1,12 @@
 <form class="name-form" (ngSubmit)="onSubmit()">
-  <h1>{{ name }}</h1>
-  <div class="form-control">
-    <label for="name">Type your first name</label>
-    <input
-      type="text"
-      name="name"
-      [(ngModel)]="name"
-      pattern="[a-zA-Z]*"
-      id="name"
-      placeholder="Your first name"
-      required
-    />
-  </div>
-  <input type="submit" value="Go" class="btn btn-block" />
+  <label for="name">Enter your first name</label>
+  <input
+    type="text"
+    name="name"
+    [(ngModel)]="name"
+    id="name"
+    placeholder="Your first name"
+    required
+  />
+  <button type="submit" class="btn btn-block" >Go</button>
 </form>

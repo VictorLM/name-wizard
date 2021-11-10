@@ -1,21 +1,24 @@
-<h1 *ngIf="name">
-  {{ name | titlecase }}
-</h1>
+<div class="panel">
 
-<div *ngIf="loading.meaning || loading.age || loading.advice">
-  <h1>LOADING...</h1>
-</div>
+  <app-loader *ngIf="loading.meaning || loading.age || loading.advice"></app-loader>
 
-<div *ngIf="!loading.meaning && !loading.age && !loading.advice">
+  <div *ngIf="!loading.meaning && !loading.age && !loading.advice">
+    <h1 *ngIf="name">
+      {{ name | titlecase }}
+    </h1>
 
-  <p *ngIf="age">
-    Age: {{ age }}
-  </p>
+    <hr/>
 
-  <p *ngIf="meaning" [innerHTML]="meaning"></p>
+    <p *ngIf="age" class="age">
+      <span>Age:</span> {{ age }}
+    </p>
 
-  <p *ngIf="advice">
-    Advice: {{ advice }}
-  </p>
+    <p *ngIf="meaning" class="meaning">
+      Name Meaning & History <span [innerHTML]="meaning"></span>
+    </p>
 
+    <p *ngIf="advice" class="advice">
+      <span>An advice for you</span> {{ advice }}
+    </p>
+  </div>
 </div>

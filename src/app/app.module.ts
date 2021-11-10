@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { PanelComponent } from './components/panel/panel.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     FormComponent,
     PanelComponent,
     PageNotFoundComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

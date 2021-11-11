@@ -32,20 +32,36 @@ div.panel {
     font-size: 1.5rem;
     span {
       font-size: 1rem;
-      margin-top: 1rem;
+      margin: 1rem 0 2rem 0;
       display: block;
-      text-align: justify;
       font-weight: normal;
+    }
+    span.has-meaning {
+      text-align: justify;
+    }
+    span.has-no-meaning {
+      text-align: center;
     }
   }
 
   p.advice {
-    text-align: center;
+    text-align: justify;
     span {
       font-size: 1.5rem;
       font-weight: 700;
       display: block;
       margin-bottom: 1rem;
+      text-align: center;
+    }
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 2rem;
+    a {
+      &:hover {
+        font-weight: bold;
+      }
     }
   }
 

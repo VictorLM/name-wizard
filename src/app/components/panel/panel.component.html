@@ -13,12 +13,19 @@
       <span>Age:</span> {{ age }}
     </p>
 
-    <p *ngIf="meaning" class="meaning">
-      Name Meaning & History <span [innerHTML]="meaning"></span>
+    <p class="meaning">
+      Name Meaning & History
+      <span *ngIf="meaning" class="has-meaning" [innerHTML]="meaning"></span>
+      <span *ngIf="!meaning" class="has-no-meaning">Not found. =(</span>
     </p>
 
     <p *ngIf="advice" class="advice">
       <span>An advice for you</span> {{ advice }}
     </p>
+
+    <footer>
+      <a [routerLink]="['/']">&#8592; Go back</a>
+    </footer>
   </div>
+
 </div>

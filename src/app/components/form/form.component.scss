@@ -12,24 +12,39 @@ form {
   label {
     font-size: 2rem;
     text-align: center;
+    margin-bottom: 1rem;
   }
 
-  input {
-    margin: 1.5rem 0;
+  input, select {
+    border: 2px solid #000;
     border-radius: .25rem;
-    height: 2rem;
     padding: .5rem;
     font-size: 1.5rem;
   }
 
-  button {
-    height: 2.5rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: .5rem;
-    transition: .3s;
-    &:hover {
-      background: lightgray;
+  div.inline {
+    display: flex;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    select {
+      option {
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      width: 100%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border: 2px solid #000;
+      border-radius: .5rem;
+      transition: .3s;
+      color: #FFFFFF;
+      background: #1E90FF;
+      &:hover {
+        background: #0074e8;
+      }
     }
   }
 

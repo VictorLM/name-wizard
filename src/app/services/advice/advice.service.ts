@@ -7,7 +7,6 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AdviceService {
-
   public onError: Subject<string> = new Subject();
   private apiUrl = 'https://api.adviceslip.com/advice';
 

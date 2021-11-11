@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { AgeService } from '../../services/age/age.service';
 import { AdviceService } from '../../services/advice/advice.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Countries } from '../../services/country/countries.enum';
 
 @Component({
   selector: 'app-panel',
@@ -13,6 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PanelComponent implements OnInit {
   name: string;
+  countryCode: Countries | undefined;
   age: number | undefined;
   meaning: string | undefined;
   advice: string | undefined;
@@ -27,23 +29,41 @@ export class PanelComponent implements OnInit {
     private meaningService: MeaningService,
     private ageService: AgeService,
     private adviceService: AdviceService,
-    private actRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private router: Router,
   ) {
-    this.name = this.actRoute.snapshot.params.name;
+    this.name = this.activatedRoute.snapshot.params.name;
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.countryCode = params['country'];
+    });
   }
 
   ngOnInit(): void {
-    const regex = /^[a-zA-Z]+$/;
 
-    if(this.name && this.name.length > 2 && this.name.length < 12 && regex.test(this.name)) {
-      this.getMeaning();
-      this.getAge();
-      this.getAdvice();
-    } else {
-      alert('Invalid first name!');
+    if(!this.name || !this.countryCode) {
+      alert('Invalid name and/or country!');
+      this.name = '';
+      this.countryCode = undefined;
       this.router.navigate(['/']);
     }
+
+    if (this.countryCode && !Object.values(Countries).includes(this.countryCode)) {
+      alert('Invalid country!');
+      this.countryCode = undefined;
+      this.router.navigate(['/']);
+    }
+
+    const regex = /^[a-zA-Z]+$/;
+
+    if(!this.name || this.name.length < 2 || this.name.length > 12 || !regex.test(this.name)) {
+      alert('Invalid first name!');
+      this.name = '';
+      this.router.navigate(['/']);
+    }
+
+    this.getMeaning();
+    this.getAge();
+    this.getAdvice();
   }
 
   getMeaning(): void {
@@ -85,7 +105,7 @@ export class PanelComponent implements OnInit {
   getAge(): void {
     if(this.name) {
       // TODO - ERROR HANDLING
-      this.subscription = this.ageService.get(this.name).subscribe(
+      this.subscription = this.ageService.get(this.name, this.countryCode).subscribe(
         result => {
           if(result?.age) {
             this.age = result.age;

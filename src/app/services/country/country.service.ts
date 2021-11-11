@@ -2,19 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, Subject } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Countries } from './countries.enum';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AgeService {
+export class CountryService {
   public onError: Subject<string> = new Subject();
-  private apiUrl = 'https://api.agify.io/?name=';
+  private apiUrl = 'http://ip-api.com/json';
 
   constructor(private http: HttpClient) {}
 
-  get(name: string, countryCode?: string): Observable<{ age: number }> {
-    const url = countryCode ? this.apiUrl + name + `&country_id=${countryCode}` : this.apiUrl + name;
-    return this.http.get<{ age: number }>(url)
+  get(): Observable<{ countryCode: Countries }> {
+    return this.http.get<{ countryCode: Countries }>(this.apiUrl)
       .pipe(
         retry(1),
         catchError(this.handleError)

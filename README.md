@@ -22,13 +22,13 @@
 <h1 id="preview">Preview</h1>
 
 <p align="center">
-  <img src="https://i.imgur.com/qdVwE6y.gif" alt="Name Wizard" />
+  <img src="https://media1.giphy.com/media/WQcagjswnXNuT967IK/giphy.gif?cid=790b7611d857ec39114fcf2b5792a33b6264a60f63793cc9&rid=giphy.gif&ct=g" alt="Name Wizard preview" />
 </p>
 
 <h1 id="tecnologias">Tecnologias</h1>
 
 <p>
-    As seguintes ferramentas foram usadas na construção deste projeto:
+  As seguintes ferramentas foram usadas na construção deste projeto:
 </p>
 
 - [Node.js](https://nodejs.org/en/)
@@ -39,6 +39,7 @@
 - [Advice Slip JSON API](https://api.adviceslip.com/)
 - [Behind the Name](https://www.behindthename.com/)
 - [allOrigins](https://allorigins.win/)
+- [ip-api](https://ip-api.com/)
 
 
 <h1 id="autor">Autor</h1>

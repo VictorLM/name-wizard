@@ -1,4 +1,26 @@
+div.title {
+  margin: 2rem 0;
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    span {
+    font-style: italic;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 1rem .5rem;
+  }
+}
+
 form {
+  margin: auto;
+  width: fit-content;
   border-radius: 1rem;
   padding: 3rem;
   display: flex;
